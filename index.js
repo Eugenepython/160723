@@ -4,9 +4,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys');
 
 
-
 const app = express();
-
 
 
 passport.use(
@@ -22,7 +20,7 @@ passport.use(
       console.log('profile:', profile);
     }
   )
-);
+)
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
@@ -30,7 +28,7 @@ app.get('/', (req, res) => {
 
 
 app.get(
-  '/auth/google',
+  '/auth/google',  
   passport.authenticate('google', {
     scope: ['profile', 'email']
   })
